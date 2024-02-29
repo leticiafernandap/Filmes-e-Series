@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="filmes.css">
+  <title>Filmes</title>
+  <style>
+    /* Adicione estilos conforme necessário */
+    .movie-container {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-left: 20px;
+      text-align: center;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!--MENU-->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Filmes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="series.html"  >Séries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="java.html">Sinopses</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Lista dos filmes java script-->
+  <main>
+    <section id="movie-list">
+      <!-- Aqui serão exibidos os filmes -->
+    </section>
+  </main>
+
+  <!-- div das sinopses-->
+  <div id="movieList"></div>
+
+  <script>
+    const movies = [
+      { title: "Para todos os garotos que já amei", synopsis: "Para Todos os Garotos que Já Amei é um romance escrito por Jenny Han, lançado em 2014. A trama gira em torno de Lara Jean Covey, uma adolescente que escreve cartas secretas para todos os garotos por quem já teve uma queda, mas nunca as envia. Seu mundo vira de cabeça para baixo quando essas cartas são misteriosamente enviadas, e ela se vê envolvida em situações complicadas com seus antigos crushes.Ao perceber que as cartas foram enviadas, Lara Jean precisa lidar com as consequências inesperadas de suas emoções expostas. Uma das cartas foi destinada a seu vizinho, Josh, que é ex-namorado de sua irmã mais velha. Para evitar que Josh descubra seus verdadeiros sentimentos, Lara Jean concorda em fingir um relacionamento com outro destinatário da carta, Peter Kavinsky, que tem seus próprios motivos para participar do plano. " },
+      { title: "Enrolados", synopsis: "Enrolados é um filme de animação da Disney lançado em 2010. A história é uma adaptação moderna do conto de fadas Rapunzel.A princesa Rapunzel foi roubada de seus pais reais quando ainda era um bebê por uma mulher chamada Gothel, que a mantém trancada em uma torre escondida na floresta.Quando Flynn Rider, um charmoso bandido, se esconde na torre de Rapunzel após roubar a coroa de um reino próximo, ela vê uma oportunidade de finalmente explorar o mundo. Rapunzel faz um acordo com Flynn para que ele a leve em uma jornada cheia de aventuras, e em troca, ela devolverá a coroa. Durante essa jornada, eles enfrentam desafios, conhecem personagens memoráveis e descobrem segredos sobre o passado de Rapunzel." },
+      { title: "As Branquelas", synopsis: "A história começa quando os dois agentes falham em proteger duas herdeiras ricas de um sequestro. Com a reputação em jogo, eles decidem se disfarçar como as irmãs para manter a fachada de proteção e continuar a investigação. O problema é que as irmãs são loiras brancas, e Kevin e Marcus são dois afro-americanos. Para realizar esse disfarce, eles passam por uma transformação extrema, utilizando maquiagem e perucas, para se tornarem as branquelas do título." },
+      { title: "O Rei Leão Hakuna Matata", synopsis: "O Rei Leão conta a história de Simba, um jovem leão destinado a se tornar rei da Terra do Leão. No entanto, seu tio malévolo, Scar, trama para tomar o trono, levando Simba a acreditar que ele é responsável pela morte de seu pai, Mufasa. Sentindo-se culpado e traumatizado, Simba foge do reino e encontra abrigo na selva.Lá, ele faz amizade com dois personagens enérgicos e descontraídos, Timão e Pumba, que adotam a filosofia Hakuna Matata como seu lema de vida. Juntos, eles vivem despreocupadamente, longe dos problemas do reino. No entanto, à medida que Simba amadurece, ele é confrontado com seu passado e com o dever de assumir seu lugar como rei e restaurar o equilíbrio na Terra do Leão." },
+      { title: "Vingadores", synopsis: "Os filmes dos Vingadores, parte do Universo Cinematográfico da Marvel (MCU), contam a história de um grupo de super-heróis que se unem para enfrentar ameaças de escala global.Dentre os Vingadores existem 4 filmes da trama o qual são Os Vingadores (2012),Vingadores: Era de Ultron (2015),Vingadores: Guerra Infinita (2018),Vingadores: Ultimato (2019)" },
+      // Adicione mais filmes conforme necessário
+    ];
+
+
+
+    // Função para exibir sinopses na página
+    function showMovieSynopses() {
+      const movieListContainer = document.getElementById('movieList');
+
+      movies.forEach(movie => {
+        const movieContainer = document.createElement('div');
+        movieContainer.classList.add('movie-container');
+
+        const titleElement = document.createElement('h2');
+        titleElement.textContent = movie.title;
+
+        const synopsisElement = document.createElement('p');
+        synopsisElement.textContent = movie.synopsis;
+
+        movieContainer.appendChild(titleElement);
+        movieContainer.appendChild(synopsisElement);
+
+        movieListContainer.appendChild(movieContainer);
+      });
+    }
+    showMovieSynopses();
+  </script>
+
+
+</body>
+<script src="scriptfilmes.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</html>

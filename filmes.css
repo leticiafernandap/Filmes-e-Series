@@ -1,0 +1,87 @@
+h2{
+    color: blueviolet;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1{
+    color: black;
+    margin-left: 20px;
+    font-size: large;
+    margin-bottom: 50px;
+}
+
+img1{
+    width: 200;
+}
+
+container{
+    margin-right: 500px;
+
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease; 
+    
+}
+
+a{
+    color: black;
+   
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+<!-- css do java>
+header {
+    background-color: #642eaa;
+    color: rgb(15, 14, 14);
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+
+
+.elementoo:hover{
+    box-shadow: 0 0 100px rgb(15, 14, 14);
+
+}
+
+.elementooo{
+    transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+}
+
+.elemento:hover{
+    transform: scale(1.2);
+    z-index:1;
+}
+
+.elementooo{
+    transition: transform o.3s ease-in-out, z-index o.3s ease-in-out;
+
+}
+
+.elementooo:hover{
+    transform: scale(1.1);
+}
+
+button{
+    margin-left: 50px;
+   margin-bottom: 20px;
+}
