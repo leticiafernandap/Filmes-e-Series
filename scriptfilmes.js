@@ -11,19 +11,19 @@ const filmes = [
 
 // Função para exibir filmes na página
 function exibirFilmes() {
-    const movieList = document.getElementById('movie-list');
+    const movieList = document.getElementById('movie-list'); // // Obtém a referência do elemento HTML com o ID 'movie-list'
 
-    filmes.forEach(filme => {
-        const card = document.createElement('div');
-        card.classList.add('movie-card');
+    filmes.forEach(filme => {  //Para cada filme no array 'filmes', execute o seguinte bloco de código
+        const card = document.createElement('div'); // Cria um novo elemento <div> para representar um cartão de filme
+        card.classList.add('movie-card');  // // Adiciona a classe 'movie-card' ao novo elemento <div>
 
-        const content = `
+        const content = `  <!--Cria uma string de conteúdo HTML usando template literals, incorporando informações do filme atual--!>
             <h3>${filme.titulo}</h3>
             <p>Ano: ${filme.ano}</p>
             <p>Gênero: ${filme.genero}</p>
         `;
 
-        card.innerHTML = content;
+        card.innerHTML = content;  //Define o conteúdo HTML do cartão do filme com a string gerada
         movieList.appendChild(card);
     });
 }
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', exibirFilmes);
 
 //muda a cor de fundo
 function changeBackgroundColor(){
-    const randomcolor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    const randomcolor = '#' + Math.floor(Math.random() * 16777215).toString(16); //gera um código em hexadecimal
 
     document.body.style.backgroundcolor = randomColor;
 }
 
 
-
+// a função exibirFilmes cria dinamicamente cartões de filme com base nos dados do array filmes e os adiciona ao elemento com o ID 'movie-list' na página HTML.
